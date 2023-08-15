@@ -12,7 +12,7 @@ export const connectToDB = async () =>{
 
     try{
         await mongoose.connect(process.env.MONGODB_URI,{
-            dbName:'share_promt',
+            dbName:'zygen-mr-add-on-web',
             useNewUrlParser:true,
             useUnifiedTopology:true,
         })
