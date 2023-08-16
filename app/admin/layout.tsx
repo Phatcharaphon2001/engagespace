@@ -1,13 +1,31 @@
 import SideBar from '@/components/sidebar/Sidebar'
+import path from 'path'
 export default function AdminLayout({
     children, // will be a page or nested layout
   }: {
     children: React.ReactNode
   }) {
+    const items = [{
+      name: 'Analytics Report',
+      pathname: '/admin/analyticsReport',
+    },{
+      name: 'User Management',
+      pathname: '/admin/userManagement',
+    },{
+      name: 'Campaign Management',
+      pathname: '/admin/campaignManagement',
+    },{
+      name: 'Mood Management',
+      pathname: '/admin/moodManagement',
+    },{
+      name : 'GuideBook',
+      pathname: '/admin/guideBook',
+    }
+  ] 
     return (
       <section className='flex w-full h-screen'>
         {/* Include shared UI here e.g. a header or sidebar */}
-        <SideBar/>
+        <SideBar items= {items} name='captain' />
         {children}
       </section>
     )
