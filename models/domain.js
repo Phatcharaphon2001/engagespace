@@ -24,6 +24,6 @@ const DomainSchema = new Schema({
     }
 });
 
-const Domain = models.domains || model("domains", UserSchema);
+const Domain = models.domains || model("domains", DomainSchema);
 
 export default Domain;
