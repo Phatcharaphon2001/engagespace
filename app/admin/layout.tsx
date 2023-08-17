@@ -1,5 +1,5 @@
 import SideBar from '@/components/sidebar/Sidebar'
-import path from 'path'
+
 export default function AdminLayout({
     children, // will be a page or nested layout
   }: {
