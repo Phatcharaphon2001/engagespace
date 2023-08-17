@@ -44,7 +44,7 @@ export default function UserMananementPage() {
   }, []);
 
   return (
-    <div>
+    <div className='flex flex-col'>
       <UserTable users={users} />
       <DomainTable items={domains}/> 
     </div>
