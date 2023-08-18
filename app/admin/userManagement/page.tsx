@@ -1,8 +1,8 @@
 "use client"
+import DomainModal from '@/components/modals/DomainModal';
+import DomainTable from '@/components/tables/domainTable';
 import UserTable from '@/components/tables/userTable';
 import React, {useState, useEffect} from 'react'
-import DomainTable from '@/components/tables/DomainTable'
-
 
 
 
@@ -45,6 +45,7 @@ export default function UserMananementPage() {
 
   return (
     <div className='flex flex-col'>
+      {/* <DomainModal/> */}
       <UserTable users={users} />
       <DomainTable items={domains}/> 
     </div>

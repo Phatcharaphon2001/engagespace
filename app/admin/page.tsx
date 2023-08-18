@@ -1,8 +1,11 @@
 "use client";
 
+
 export default function AdminPage(){
   return(
-    <p>admin</p>
+    <div>
+      <p>Admin</p>
+    </div>
   )
 }
 
