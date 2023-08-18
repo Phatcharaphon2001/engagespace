@@ -1,23 +1,9 @@
 "use client"
-import DomainModal from '@/components/modals/DomainModal';
-import DomainTable from '@/components/tables/domainTable';
+
+import DomainTable from '@/components/tables/DomainTable';
 import UserTable from '@/components/tables/userTable';
 import React, {useState, useEffect} from 'react'
 
-
-
-  export interface User {
-    _id: string,
-    name: string,
-    email: string,
-    nickname: string,
-    title: string,
-    team: string,
-    picture: string,
-    mobile: string,
-    role: string,
-
-  }
 
 export default function UserMananementPage() {
   const [domains,setDomains] = useState(null);
