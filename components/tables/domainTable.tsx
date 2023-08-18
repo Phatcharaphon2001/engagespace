@@ -1,5 +1,6 @@
-import { redirect } from 'next/dist/server/api-utils'
 import React from 'react'
+import DomainModal from '../modals/DomainModal'
+
 interface DomainTableProps {
   items: any,
 }
@@ -7,9 +8,6 @@ interface DomainTableProps {
 const DomainTable: React.FC<DomainTableProps> = ({
   items
 }) => {
-  function editPage(id:any){
-      window.location.replace(`http://localhost:3000/admin/userManagement/domainEdit?id=${id}`)
-  }
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -37,7 +35,7 @@ const DomainTable: React.FC<DomainTableProps> = ({
             items?.map((item: any) => (
               <tr key={item._id} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  {item.domainName}
+                  {item.name}
                 </th>
                 <td className="px-6 py-4">
                   {item.activeDate}
@@ -50,7 +48,7 @@ const DomainTable: React.FC<DomainTableProps> = ({
                     concurrentUser}
                 </td>
                 <td className="px-6 py-4">
-                  <button onClick={()=>{editPage(item._id)}} className="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-10">Edit</button>
+                  <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-10">Edit</a>
                   <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                 </td>
               </tr>
