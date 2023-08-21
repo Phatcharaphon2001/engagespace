@@ -16,16 +16,16 @@ const userTable : React.FC<UsersTableProps> = ({
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" className="px-6 py-3">
-                    Product name
+                    name
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Color
+                    Team
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Category
+                    Role
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Price
+                    Grant Access
                 </th>
                 <th scope="col" className="px-6 py-3">
                     Action

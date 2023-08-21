@@ -13,7 +13,7 @@ interface DomainFormState {
   concurrentUser:Number
 }
 
-const page: React.FC<domainEditProps> = ({
+const Page: React.FC<domainEditProps> = ({
   request,
 }) => {
 
@@ -107,4 +107,4 @@ const page: React.FC<domainEditProps> = ({
   )
 }
 
-export default page
+export default Page

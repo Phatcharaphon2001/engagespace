@@ -17,7 +17,7 @@ interface UserFormState {
     picture: string,
 }
 
-const page: React.FC<editUserEditProps> = ({
+const Page: React.FC<editUserEditProps> = ({
     request,
 }) => {
 
@@ -80,8 +80,82 @@ const page: React.FC<editUserEditProps> = ({
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="domain">
                         Name
                     </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="domain" type="text" placeholder="domain" value={formData?.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="" 
+                    type="text" 
+                    placeholder="" 
+                    value={formData?.name} 
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                 </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="domain">
+                        Nickname
+                    </label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="" 
+                    type="text" 
+                    placeholder="" 
+                    value={formData?.nickname} 
+                    onChange={(e) => setFormData({ ...formData, nickname: e.target.value })} />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="domain">
+                        Email
+                    </label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="" 
+                    type="text" 
+                    placeholder="" 
+                    value={formData?.email} 
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })} 
+                    disabled/>
+                </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="domain">
+                        Title
+                    </label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="" 
+                    type="text" 
+                    placeholder="" 
+                    value={formData?.title} 
+                    onChange={(e) => setFormData({ ...formData, title: e.target.value })} />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="domain">
+                        Team
+                    </label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="" 
+                    type="text" 
+                    placeholder="" 
+                    value={formData?.team} 
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="domain">
+                        Mobile
+                    </label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="" 
+                    type="text" 
+                    placeholder="" 
+                    value={formData?.mobile} 
+                    onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="domain">
+                        Role
+                    </label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="" 
+                    type="text" 
+                    placeholder="" 
+                    value={formData?.role} 
+                    onChange={(e) => setFormData({ ...formData, role: e.target.value })} 
+                    />
+                </div>
+                
 
 
                 <div className="flex items-center justify-between">
@@ -96,4 +170,4 @@ const page: React.FC<editUserEditProps> = ({
     )
 }
 
-export default page
+export default Page

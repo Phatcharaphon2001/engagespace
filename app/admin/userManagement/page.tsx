@@ -1,6 +1,6 @@
 "use client"
 
-import DomainTable from '@/components/tables/DomainTable';
+import DomainTable from '@/components/tables/domainTable';
 import UserTable from '@/components/tables/userTable';
 import React, {useState, useEffect} from 'react'
 

@@ -23,7 +23,7 @@ export default function AdminLayout({
   }
   ]
   return (
-    <section className='flex w-full h-screen'>
+    <section className='flex w-full h-screen font-mitr'>
       {/* Include shared UI here e.g. a header or sidebar */}
       <SideBar items={items} name='captain' />
         {children}
