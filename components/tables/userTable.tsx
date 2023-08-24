@@ -1,63 +1,71 @@
-import React from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
+import Table from './Table'
 
 
-interface UsersTableProps {
-  users: any,
-}
 
+const userTable = () => {
+    const [users, setUsers] = useState<[]>();
+    useEffect(() => {
+        fetch('http://localhost:3000/api/usermaster')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json();
+            })
+            .then(resJson => {
+                setUsers(resJson);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
-const userTable : React.FC<UsersTableProps> = ({
-  users,
-}) => {
-  return (
-    
-<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    const header:ReactElement = (
+        <header>UserManageMent</header>
+    )
+
+    const theadsElement = (): ReactElement => {
+        const lists = ['Email', 'Team', 'Role', 'Grant Access', 'Action']
+        return (
             <tr>
-                <th scope="col" className="px-6 py-3">
-                    name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Team
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Role
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Grant Access
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Action
-                </th>
+                {
+                    lists.map((item) => (
+                        <th scope='col' className="border border-slate-300">{item}</th>
+                    ))
+                }
             </tr>
-        </thead>
-        <tbody>
-          {users?.map((user: any) => (
-             <tr key={user._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                 {user.name}
-             </th>
-             <td className="px-6 py-4">
-                 {user.team}
-             </td>
-             <td className="px-6 py-4">
-                 {user.role}
-             </td>
-             <td className="px-6 py-4">
-                 null
-             </td>
-             <td className="px-6 py-4">
-                 <a href={`/admin/userManagement/editUser?id=${user._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-             </td>
-         </tr>
-          ))}
-         
-        </tbody>
-    </table>
-</div>
+        )
+    }
 
-  )
+    const tbodiesElement = (): ReactElement => {
+        return (
+            <>
+                {
+                    users?.map((item: any) => (
+                        <tr>
+                            <td scope='row' className="w-[20%] border border-slate-300 border-collapse">{item?.email}</td>
+                            <td scope='row' className="w-[20%] border border-slate-300">{item?.team}</td>
+                            <td scope='row' className="w-[20%] border border-slate-300">{item?.role}</td>
+                            <td scope='row' className="w-[20%] border border-slate-300">{item?.grantaccess}</td>
+                            <td scope='row' className="w-[20%] border border-slate-300">
+                                <button className='mr-[10px]'>Edit</button>
+                                <button className='mr-[10px]'>Delete</button>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </>
+        )
+    }
+
+    return (
+        <Table
+            header={header} 
+            theads={theadsElement()} 
+            tbodies={tbodiesElement()} 
+        />
+    )
 }
 
 export default userTable
