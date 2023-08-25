@@ -3,7 +3,7 @@ import Table from './Table'
 
 
 
-const userTable = () => {
+const UserTable = () => {
     const [users, setUsers] = useState<[]>();
     useEffect(() => {
         fetch('http://localhost:3000/api/usermaster')
@@ -68,4 +68,4 @@ const userTable = () => {
     )
 }
 
-export default userTable
+export default UserTable
